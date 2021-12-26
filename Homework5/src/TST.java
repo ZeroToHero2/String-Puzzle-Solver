@@ -1,6 +1,9 @@
+import java.util.Scanner;
+
 public class TST<Value> {
     private int n;              // size
     private Node<Value> root;   // root of TST
+
 
     private static class Node<Value> {
         private char c;                        // character
@@ -8,11 +11,15 @@ public class TST<Value> {
         private Value val;                     // value associated with string
     }
 
+    public TST() {
+
+    }
     /**
      * Initializes an empty string symbol table.
+     *
+     * @param fileScanner
      */
-    public TST() {
-    }
+
 
     /**
      * Returns the number of key-value pairs in this symbol table.
@@ -36,6 +43,13 @@ public class TST<Value> {
             throw new IllegalArgumentException("argument to contains() is null");
         }
         return get(key) != null;
+    }
+
+    public boolean Search(String arg) {
+        if (arg == null) {
+            return false;
+        }
+        return get(arg) != null;
     }
 
     /**
@@ -87,6 +101,7 @@ public class TST<Value> {
 
     private Node<Value> put(Node<Value> x, String key, Value val, int d) {
         char c = key.charAt(d);
+        // if (((c < 'z') && (c > 'A')))  No need to this if statement just change input file. VPL only check input1.txt
         if (x == null) {
             x = new Node<Value>();
             x.c = c;
@@ -95,6 +110,7 @@ public class TST<Value> {
         else if (c > x.c) x.right = put(x.right, key, val, d);
         else if (d < key.length() - 1) x.mid = put(x.mid, key, val, d + 1);
         else x.val = val;
+
         return x;
     }
 
@@ -141,6 +157,18 @@ public class TST<Value> {
         return queue;
     }
 
+    public Iterable<String> ReverseAutoComplete(String prefix) {
+        if (prefix == null) {
+            throw new IllegalArgumentException("calls keysWithPrefix() with null argument");
+        }
+        Queue<String> queue = new Queue<String>();
+        Node<Value> x = get(root, prefix, 0);
+        if (x == null) return queue;
+        if (x.val != null) queue.enqueue(prefix);
+        collect(x.mid, new StringBuilder(prefix), queue);
+        return queue;
+    }
+
     /**
      * Returns all of the keys in the set that start with {@code prefix}.
      *
@@ -150,6 +178,18 @@ public class TST<Value> {
      * @throws IllegalArgumentException if {@code prefix} is {@code null}
      */
     public Iterable<String> keysWithPrefix(String prefix) {
+        if (prefix == null) {
+            throw new IllegalArgumentException("calls keysWithPrefix() with null argument");
+        }
+        Queue<String> queue = new Queue<String>();
+        Node<Value> x = get(root, prefix, 0);
+        if (x == null) return queue;
+        if (x.val != null) queue.enqueue(prefix);
+        collect(x.mid, new StringBuilder(prefix), queue);
+        return queue;
+    }
+
+    public Iterable<String> AutoComplete(String prefix) {
         if (prefix == null) {
             throw new IllegalArgumentException("calls keysWithPrefix() with null argument");
         }
@@ -181,6 +221,12 @@ public class TST<Value> {
      * as an iterable, where . is treated as a wildcard character.
      */
     public Iterable<String> keysThatMatch(String pattern) {
+        Queue<String> queue = new Queue<String>();
+        collect(root, new StringBuilder(), 0, pattern, queue);
+        return queue;
+    }
+
+    public Iterable<String> FullComplete(String pattern) {
         Queue<String> queue = new Queue<String>();
         collect(root, new StringBuilder(), 0, pattern, queue);
         return queue;
