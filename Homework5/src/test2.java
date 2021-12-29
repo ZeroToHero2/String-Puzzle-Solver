@@ -184,7 +184,7 @@ public class test2 {
 
 
         solvePuzzle(trieST, "C:\\Users\\BAHADIR\\IdeaProjects\\Work\\Homework5\\src\\puzzle1.txt");
-        ReverseSearch("qx", trieST);
+        ReverseSearch("s", trieST);
     }
 
 
