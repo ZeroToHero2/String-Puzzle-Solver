@@ -90,21 +90,13 @@ class Util {
         Scanner sc = new Scanner(new File(path));
         ArrayList<String> list = new ArrayList<>();
         char[][] arr;
-
         int counter2 = 0;
-
-
         String next = sc.nextLine();
         list.add(next);
-
-
         while (sc.hasNext()) {
             next = sc.nextLine();
             list.add(next);
-
-
         }
-
         counter2 = 0;
         arr = new char[list.size()][list.size()];
         for (int i = 0; i < list.size(); i++) {
@@ -114,10 +106,7 @@ class Util {
             }
             counter2 = 0;
         }
-
         createArray(Try, arr);
-
-
     }
 
     private String reverseString(String str) {
@@ -128,14 +117,10 @@ class Util {
 
     public void ReverseSearch(String S, TrieST trieST) {
         ArrayList<String> list2 = new ArrayList<>();
-
         TrieST<Integer> ntry = new TrieST();
-
         for (Object e : trieST.keys()) {
             ntry.put(reverseString((String) e), ((int) Math.random() * 100) + 1);
         }
-
-
         TrieST<Integer> ntry2 = new TrieST();
         for (String s : ntry.keysWithPrefix(S)) {
             ntry2.put(reverseString(s), ((int) Math.random() * 100) + 1);
@@ -143,7 +128,6 @@ class Util {
         for (String s : ntry2.keys()) {
             list2.add(s);
         }
-
         if (!list2.isEmpty()) {
             for (int i = 0; i < list2.size() - 1; i++) {
                 System.out.print(list2.get(i) + ", ");
@@ -152,11 +136,9 @@ class Util {
         } else {
             System.out.println("No word");
         }
-
-
     }
 
-    public static void solvePuzzle(TrieST<Integer> Try, File file) throws FileNotFoundException {
+   /* public static void solvePuzzle(TrieST<Integer> Try, File file) throws FileNotFoundException {
         Scanner sc = new Scanner(file);
         String arr[][] = new String[5][5];
         while (sc.hasNext()) {
@@ -173,7 +155,7 @@ class Util {
         print(arr);
 
 
-    }
+    }*/
 
     private static void print(String[][] arr) {
         for (int i = 0; i < 5; i++) {
@@ -183,7 +165,7 @@ class Util {
         }
     }
 
-    public void reader() throws FileNotFoundException {
+   /* public void reader() throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
         Scanner fileScanner = new Scanner(new File("C:\\Users\\BAHADIR\\IdeaProjects\\Work\\Homework5\\src\\input1.txt"));
         Scanner fileScanner1 = new Scanner(new File("C:\\Users\\BAHADIR\\IdeaProjects\\Work\\Homework5\\src\\input1.txt"));
@@ -191,7 +173,7 @@ class Util {
          *  Start Scanning Initial State From File
          */
 
-        TST<Integer> Trie = new TST<Integer>();
+       /* TST<Integer> Trie = new TST<Integer>();
         TrieST<Integer> trieST = new TrieST<Integer>();
         while (fileScanner.hasNextLine()) {
             String[] inputArray;
@@ -203,11 +185,10 @@ class Util {
         }
 
 
-    }
+    }*/
 }
 
 public class DriverClass {
-
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
@@ -232,7 +213,7 @@ public class DriverClass {
         int input = scanner.nextInt();
         switch (input) {
             case 1:     //Search
-                String searchInput = scanner.next();
+                String searchInput = scanner.next().toLowerCase();
                 if (Trie.Search(searchInput)) System.out.println("True"); // Search Algorithm Test
                 else System.out.println("False");
                 break;
