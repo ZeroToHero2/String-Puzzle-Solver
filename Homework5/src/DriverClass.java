@@ -2,7 +2,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+//-----------------------------------------------------
+// Title: Class Util
+// Author: Abdusselam koç,Bahadır ünal
+// ID: 4931214741,1000776827
+// Section: 2,3
+// Assignment: 5
+// Description: This class creates the matrix and and finds word according to search and finds reverseAutocomplete.
+//-----------------------------------------------------
+
+
 class Util {
+
     // Rows and columns in the given grid
     int R, C;
     // For searching in all 8 direction
@@ -13,6 +24,14 @@ class Util {
     // 8-direction from point
     // (row, col) in grid[][]
     boolean search2D(char[][] grid, int row, int col, String word) {
+        //--------------------------------------------------------
+        // Summary: A helper method for searching the puzzle. It  searches the puzzle horizontally, vertically and diagonally.
+        // name is given.
+        // Precondition: Whether the word is in the puzzle or not is unknown.
+        // Postcondition: Whether the word is in the puzzle or not is known.
+        //--------------------------------------------------------
+
+
         // If first character of word
         // doesn't match with
         // given starting point in grid.
@@ -54,6 +73,14 @@ class Util {
     // Searches given word in a given
     // matrix in all 8 directions
     boolean patternSearch(char[][] grid, String word) {
+        //--------------------------------------------------------
+        // Summary: searches a words in the puzzle.
+        // name is given.
+        // Precondition: Whether the word is in the puzzle or not is unknown.
+        // Postcondition: Whether the word is in the puzzle or not is known.
+        //--------------------------------------------------------
+
+
         // Consider every point as starting
         // point and search given word
         boolean check = false;
@@ -67,16 +94,23 @@ class Util {
 
 
     public void createArray(TrieST trieST, char[][] arr) {
+        //--------------------------------------------------------
+        // Summary: Searches for the every word in the trie from puzzle.
+        // name is given.
+        // Precondition: Whether the word is in the puzzle or not is unknown.
+        // Postcondition: Whether the word is in the puzzle or not is known.
+        //--------------------------------------------------------
         R = arr.length;
         C = arr.length;
 
         ArrayList<String> list2 = new ArrayList<>();
-
+        // loop to search for every word in the given trie.
         for (Object e : trieST.keys()) {
             boolean check = patternSearch(arr, (String) e);
             if (check) list2.add((String) e);
 
         }
+        // print loop to print all words
         for (int i = 0; i < list2.size() - 1; i++) {
             System.out.print(list2.get(i) + ", ");
         }
@@ -87,6 +121,13 @@ class Util {
 
 
     public void solvePuzzle(TrieST<Integer> Try, String path) throws FileNotFoundException {
+        //--------------------------------------------------------
+        // Summary: Creates a 2d char array for the given puzzle input.
+        // name is given.
+        // Precondition: The puzzle is not created.
+        // Postcondition: The puzzle is created.
+        //--------------------------------------------------------
+
         Scanner sc = new Scanner(new File(path));
         ArrayList<String> list = new ArrayList<>();
         char[][] arr;
@@ -110,17 +151,34 @@ class Util {
     }
 
     private String reverseString(String str) {
+        //--------------------------------------------------------
+        // Summary: A helper method to reverse Strings
+        // name is given.
+        // Precondition: The String is not reversed.
+        // Postcondition: The string is reversed and returned.
+        //--------------------------------------------------------
+
+
         StringBuilder sb = new StringBuilder(str);
         sb.reverse();
         return sb.toString();
     }
 
     public void ReverseSearch(String S, TrieST trieST) {
+        //--------------------------------------------------------
+        // Summary: finds the reverse auto complete for given inputs according to the given suffix.
+        // name is given.
+        // Precondition: all string with the given suffix is not found.
+        // Postcondition:  all string with the given suffix is not found and printed.
+        //--------------------------------------------------------
+
+        //creating trie.
         ArrayList<String> list2 = new ArrayList<>();
         TrieST<Integer> ntry = new TrieST();
         for (Object e : trieST.keys()) {
             ntry.put(reverseString((String) e), ((int) Math.random() * 100) + 1);
         }
+        //creating trie.
         TrieST<Integer> ntry2 = new TrieST();
         for (String s : ntry.keysWithPrefix(S)) {
             ntry2.put(reverseString(s), ((int) Math.random() * 100) + 1);
@@ -128,6 +186,7 @@ class Util {
         for (String s : ntry2.keys()) {
             list2.add(s);
         }
+        //printing values to the screen.
         if (!list2.isEmpty()) {
             for (int i = 0; i < list2.size() - 1; i++) {
                 System.out.print(list2.get(i) + ", ");
@@ -138,57 +197,19 @@ class Util {
         }
     }
 
-   /* public static void solvePuzzle(TrieST<Integer> Try, File file) throws FileNotFoundException {
-        Scanner sc = new Scanner(file);
-        String arr[][] = new String[5][5];
-        while (sc.hasNext()) {
-            int counter = 0;
-            int counter1 = 0;
-            if (counter == 4) {
-                counter1++;
-                counter = 0;
-            }
-            arr[counter1][counter] = sc.next();
-            counter++;
 
-        }
-        print(arr);
-
-
-    }*/
-
-    private static void print(String[][] arr) {
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                System.out.println(arr[i][j]);
-            }
-        }
-    }
-
-   /* public void reader() throws FileNotFoundException {
-        Scanner scanner = new Scanner(System.in);
-        Scanner fileScanner = new Scanner(new File("C:\\Users\\BAHADIR\\IdeaProjects\\Work\\Homework5\\src\\input1.txt"));
-        Scanner fileScanner1 = new Scanner(new File("C:\\Users\\BAHADIR\\IdeaProjects\\Work\\Homework5\\src\\input1.txt"));
-        /**
-         *  Start Scanning Initial State From File
-         */
-
-       /* TST<Integer> Trie = new TST<Integer>();
-        TrieST<Integer> trieST = new TrieST<Integer>();
-        while (fileScanner.hasNextLine()) {
-            String[] inputArray;
-            inputArray = fileScanner.nextLine().split(" ");
-            for (int i = 0; i < inputArray.length; i++) {
-                Trie.put(inputArray[i], ((int) Math.random() * 100) + 1);//Add a value to end of the string from 1 to 100
-                trieST.put(inputArray[i], 1);//Add a value to end of the string from 1 to 100
-            }
-        }
-
-
-    }*/
 }
 
 public class DriverClass {
+//-----------------------------------------------------
+// Title: Class DriverClass
+// Author:Bahadır ünal, Abdusselam koç,
+// ID: 1000776827, 4931214741
+// Section: 3,2
+// Assignment: 5
+// Description: this class creates search, autocomplete, fullautocomplete, finding top k methods and runs the main loop.
+//-----------------------------------------------------
+
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
@@ -263,7 +284,7 @@ public class DriverClass {
                 System.out.println(sb); // FullComplete Algorithm Test*/
 
                 break;
-            case 5: //findTopK      -----------!!!!!!!!!!!!  cevap "we" yerine "We" olmalı   !!!!!!!!!!!!-------------------
+            case 5: //findTopK
                 int top = scanner.nextInt();
                 HashMap<String, Integer> map = new HashMap<String, Integer>();
                 while (fileScanner1.hasNextLine()) { //Read File in a different way that specify the number of each "string occurences" into the Hashmap.
@@ -299,7 +320,7 @@ public class DriverClass {
                 }
 
                 break;
-            case 6: //SolvePuzzle //Boş
+            case 6: //SolvePuzzle
                 String puzzlePath = scanner.next();
                 Util ut1 = new Util();
                 ut1.solvePuzzle(trieST, puzzlePath);
