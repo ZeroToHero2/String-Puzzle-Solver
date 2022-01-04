@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class TesterClass {
 //-----------------------------------------------------
-// Title: Class Util
+// Title: Class TesterClass
 // Author: Abdusselam koç,Bahadır ünal
 // ID: 4931214741,1000776827
 // Section: 2,3

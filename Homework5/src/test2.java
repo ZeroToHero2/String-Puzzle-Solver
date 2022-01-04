@@ -3,7 +3,14 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-
+//-----------------------------------------------------
+// Title: Class test2
+// Author: Abdusselam koç,Bahadır ünal
+// ID: 4931214741,1000776827
+// Section: 2,3
+// Assignment: 5
+// Description: This class for Development testing while developing and Unit Testing.
+//-----------------------------------------------------
 public class test2 {
 
 
