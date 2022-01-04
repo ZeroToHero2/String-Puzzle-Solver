@@ -11,10 +11,18 @@ public class TesterClass {
 // ID: 4931214741,1000776827
 // Section: 2,3
 // Assignment: 5
-// Description: This class tests the all functionality of the program with different inputs.
+// Description: This class tests the all functionalities of the program with different inputs.
 //-----------------------------------------------------
 
-    public void test1(int input2) throws FileNotFoundException {
+    public void test(int input2) throws FileNotFoundException {
+        //--------------------------------------------------------
+        // Summary: test function to test functionalities of the class with constant inputs.
+        // name is given.
+        // it takes one parameter which tells the loop to execute required function.
+        // Precondition: The program is not tested with different inputs.
+        // Postcondition: The program is tested with different inputs
+        //--------------------------------------------------------
+
         Scanner scanner = new Scanner(System.in);
         // Scanner fileScanner = new Scanner(new File("C:\\Users\\BAHADIR\\IdeaProjects\\Work\\Homework5\\src\\input1.txt"));
         String path = "C:\\Users\\m_722\\Desktop\\cmpe 3rd class\\cmpe 343\\hmw5\\Work\\Homework5\\src\\input2.txt"; //File Path
@@ -135,29 +143,29 @@ public class TesterClass {
 
 
     public static void main(String[] args) throws FileNotFoundException {
-        TesterClass test = new TesterClass();
+        TesterClass test = new TesterClass(); // tester class object.
         System.out.print("Search:  ");
-        test.test1(1);
+        test.test(1); // testing for input 1.
 
         System.out.println();
         System.out.print("Auto Complete:   ");
-        test.test1(2);
+        test.test(2); // testing for input 2.
 
         System.out.println();
         System.out.print(" Reverse Auto Complete:   ");
-        test.test1(3);
+        test.test(3); // testing for input 3.
 
         System.out.println();
         System.out.print("Full Complete:   ");
-        test.test1(4);
+        test.test(4); // testing for input 4.
 
         System.out.println();
         System.out.print("Find Top K:   ");
-        test.test1(5);
+        test.test(5); // testing for input 5.
 
         System.out.println();
         System.out.print("Solve Puzzle:  ");
-        test.test1(6);
+        test.test(6); // testing for input 6.
     }
 
 
