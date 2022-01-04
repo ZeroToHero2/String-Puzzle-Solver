@@ -5,7 +5,14 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class TesterClass {
-
+//-----------------------------------------------------
+// Title: Class Util
+// Author: Abdusselam koç,Bahadır ünal
+// ID: 4931214741,1000776827
+// Section: 2,3
+// Assignment: 5
+// Description: This class tests the all functionality of the program with different inputs.
+//-----------------------------------------------------
 
     public void test1(int input2) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
@@ -30,7 +37,7 @@ public class TesterClass {
         int input = input2;
         switch (input) {
             case 1:     //Search
-                String searchInput = "beton";
+                String searchInput = "recognition";
                 if (Trie.Search(searchInput)) System.out.println("True"); // Search Algorithm Test
                 else System.out.println("False");
                 break;
@@ -52,12 +59,12 @@ public class TesterClass {
                 break;
             case 3:     //ReverseAutoComplete /
                 Util ut = new Util();
-                String userInput = "f";
+                String userInput = "e";
                 ut.ReverseSearch(userInput, trieST);
                 break;
             case 4: //FullComplete
-                scanner.nextLine();// Consume newline left-over
-                String inp = scanner.nextLine();
+
+                String inp = "ap l ";
                 int staticInpLength = inp.length();
                 for (int i = 0; i < staticInpLength; i++) { //This for converting the th ee to th.ree which can compatible with our fullComplete method.
                     if (inp.charAt(i) == ' ') {
@@ -128,13 +135,29 @@ public class TesterClass {
 
 
     public static void main(String[] args) throws FileNotFoundException {
-    TesterClass test = new TesterClass();
-    test.test1(1);
-    test.test1(2);
-    test.test1(3);
-    test.test1(4);
-    test.test1(5);
-    test.test1(6);
+        TesterClass test = new TesterClass();
+        System.out.print("Search:  ");
+        test.test1(1);
+
+        System.out.println();
+        System.out.print("Auto Complete:   ");
+        test.test1(2);
+
+        System.out.println();
+        System.out.print(" Reverse Auto Complete:   ");
+        test.test1(3);
+
+        System.out.println();
+        System.out.print("Full Complete:   ");
+        test.test1(4);
+
+        System.out.println();
+        System.out.print("Find Top K:   ");
+        test.test1(5);
+
+        System.out.println();
+        System.out.print("Solve Puzzle:  ");
+        test.test1(6);
     }
 
 
