@@ -19,7 +19,6 @@ class Util {
     // For searching in all 8 direction
     int[] x = {-1, -1, -1, 0, 0, 1, 1, 1};
     int[] y = {-1, 0, 1, -1, 1, -1, 0, 1};
-
     // This function searches in all
     // 8-direction from point
     // (row, col) in grid[][]
@@ -38,7 +37,6 @@ class Util {
         if (grid[row][col] != word.charAt(0)) {
             return false;
         }
-
         int len = word.length();
 
         // Search word in all 8 directions
@@ -47,21 +45,17 @@ class Util {
             // Initialize starting point
             // for current direction
             int k, rd = row + x[dir], cd = col + y[dir];
-
             // First character is already checked,
             // match remaining characters
             for (k = 1; k < len; k++) {
                 // If out of bound break
                 if (rd >= R || rd < 0 || cd >= C || cd < 0) break;
-
                 // If not matched, break
                 if (grid[rd][cd] != word.charAt(k)) break;
-
                 // Moving in particular direction
                 rd += x[dir];
                 cd += y[dir];
             }
-
             // If all character matched,
             // then value of must
             // be equal to length of word
@@ -207,7 +201,7 @@ public class DriverClass {
 // ID: 1000776827, 4931214741
 // Section: 3,2
 // Assignment: 5
-// Description: this class creates search, autocomplete, fullautocomplete, finding top k methods and runs the main loop.
+// Description: this class creates search, autocomplete, fullAutocomplete, finding top k methods and runs the main loop.
 //-----------------------------------------------------
 
 
