@@ -30,7 +30,7 @@ public class TesterClass {
         Scanner fileScanner1 = new Scanner(new File(path));
         /**
          *  Start Scanning Initial State From File
-         */
+         */ 
 
         TST<Integer> Trie = new TST<Integer>();
         TrieST<Integer> trieST = new TrieST<Integer>();
