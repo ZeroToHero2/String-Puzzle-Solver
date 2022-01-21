@@ -30,7 +30,6 @@ class Util {
         // Postcondition: Whether the word is in the puzzle or not is known.
         //--------------------------------------------------------
 
-
         // If first character of word
         // doesn't match with
         // given starting point in grid.
@@ -74,7 +73,6 @@ class Util {
         // Postcondition: Whether the word is in the puzzle or not is known.
         //--------------------------------------------------------
 
-
         // Consider every point as starting
         // point and search given word
         boolean check = false;
@@ -112,7 +110,6 @@ class Util {
 
 
     }
-
 
     public void solvePuzzle(TrieST<Integer> Try, String path) throws FileNotFoundException {
         //--------------------------------------------------------
@@ -152,7 +149,6 @@ class Util {
         // Postcondition: The string is reversed and returned.
         //--------------------------------------------------------
 
-
         StringBuilder sb = new StringBuilder(str);
         sb.reverse();
         return sb.toString();
@@ -190,8 +186,6 @@ class Util {
             System.out.println("No word");
         }
     }
-
-
 }
 
 public class DriverClass {
@@ -312,7 +306,7 @@ public class DriverClass {
                         System.out.print(sortArray[i].text + ", ");
                     }
                 }
-
+                
                 break;
             case 6: //SolvePuzzle
                 String puzzlePath = scanner.next();
@@ -320,8 +314,7 @@ public class DriverClass {
                 ut1.solvePuzzle(trieST, puzzlePath);
                 break;
         }
-
-
+        
     }
 }
 
