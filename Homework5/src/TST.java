@@ -190,7 +190,7 @@ public class TST<Value> {
     public Iterable<String> keysWithPrefix(String prefix) {
         if (prefix == null) {
             throw new IllegalArgumentException("calls keysWithPrefix() with null argument");
-        }
+        } 
         Queue<String> queue = new Queue<String>();
         Node<Value> x = get(root, prefix, 0);
         if (x == null) return queue;
