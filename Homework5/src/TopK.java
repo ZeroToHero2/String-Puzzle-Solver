@@ -3,7 +3,7 @@
 // Author: Abdusselam koç,Bahadır ünal
 // ID: 4931214741,1000776827
 // Section: 2,3
-// Assignment: 5
+// Assignment: 5 
 // Description: This class represents the TopK object and it’s attributes which are “text” which holds string itself
 // and “Frequency” which holds frequency of given string”.
 // We need this class for “storing each string’s frequency” in a one instance.
