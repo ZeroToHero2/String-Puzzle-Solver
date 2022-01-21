@@ -188,17 +188,13 @@ class Util {
 public class DriverClass {
 //-----------------------------------------------------
 // Title: Class DriverClass
-// Author:Bahadır ünal, Abdusselam koç,
-// ID: 1000776827, 4931214741
-// Section: 3,2
-// Assignment: 5
-// Description: this class creates search, autocomplete, fullAutocomplete, finding top k methods and runs the main loop.
+// Author:Bahadır Ünal, Abdusselam Koç,
+// Description: This class creates search, autocomplete, fullAutocomplete, finding top k methods and runs the main loop.
 //-----------------------------------------------------
 
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
-        // Scanner fileScanner = new Scanner(new File("C:\\Users\\BAHADIR\\IdeaProjects\\Work\\Homework5\\src\\input1.txt"));
         String path = scanner.nextLine().trim(); //File Path
         Scanner fileScanner = new Scanner(new File(path));
         Scanner fileScanner1 = new Scanner(new File(path));
@@ -232,12 +228,11 @@ public class DriverClass {
                     s.append(item);
                     s.append(", ");
                 }
-                if (!autoComplete.isEmpty()) { //s.isEmpty() VPL error for this expression
+                if (!autoComplete.isEmpty()) { 
                     s.deleteCharAt(s.length() - 2);
                 } else {
                     System.out.println("No word");
                 }
-                System.out.println(s); // AutoComplete Algorithm Test
                 break;
             case 3:     //ReverseAutoComplete /
                 Util ut = new Util();
@@ -261,13 +256,11 @@ public class DriverClass {
                     sb.append(item);
                     sb.append(", ");
                 }
-                if (!fullComplete.isEmpty()) { //s.isEmpty() VPL error for this expression
+                if (!fullComplete.isEmpty()) { 
                     sb.deleteCharAt(sb.length() - 2);
                 } else {
                     System.out.println("No word");
                 }
-                System.out.println(sb); // FullComplete Algorithm Test*/
-
                 break;
             case 5: //findTopK
                 int top = scanner.nextInt();
