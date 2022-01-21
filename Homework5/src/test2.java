@@ -7,16 +7,14 @@ import java.util.Scanner;
 // Title: Class test2
 // Author: Abdusselam koç,Bahadır ünal
 // ID: 4931214741,1000776827
-// Section: 2,3
+// Section: 2,3 
 // Assignment: 5
 // Description: This class for Development testing while developing and Unit Testing.
 //-----------------------------------------------------
 public class test2 {
 
-
     // Rows and columns in the given grid
     int R, C;
-
 
     // For searching in all 8 direction
     int[] x = {-1, -1, -1, 0, 0, 1, 1, 1};
