@@ -5,10 +5,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 //-----------------------------------------------------
 // Title: Class test2
-// Author: Abdusselam koç,Bahadır ünal
-// ID: 4931214741,1000776827
-// Section: 2,3 
-// Assignment: 5
+// Author: Abdusselam Koç,Bahadır Ünal
 // Description: This class for Development testing while developing and Unit Testing.
 //-----------------------------------------------------
 public class test2 {
@@ -170,8 +167,8 @@ public class test2 {
 
     public void reader() throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
-        Scanner fileScanner = new Scanner(new File("C:\\Users\\BAHADIR\\IdeaProjects\\Work\\Homework5\\src\\input1.txt"));
-        Scanner fileScanner1 = new Scanner(new File("C:\\Users\\BAHADIR\\IdeaProjects\\Work\\Homework5\\src\\input1.txt"));
+        Scanner fileScanner = new Scanner(new File("C:\\Users\\BAHADIR\\IdeaProjects\\Work\\work\\src\\input1.txt"));
+        Scanner fileScanner1 = new Scanner(new File("C:\\Users\\BAHADIR\\IdeaProjects\\Work\\work\\src\\input1.txt"));
         /**
          *  Start Scanning Initial State From File
          */
@@ -188,7 +185,7 @@ public class test2 {
         }
 
 
-        solvePuzzle(trieST, "C:\\Users\\BAHADIR\\IdeaProjects\\Work\\Homework5\\src\\puzzle1.txt");
+        solvePuzzle(trieST, "C:\\Users\\BAHADIR\\IdeaProjects\\Work\\work\\src\\puzzle1.txt");
         ReverseSearch("s", trieST);
     }
 
