@@ -2,10 +2,6 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 //-----------------------------------------------------
 // Title: Queue class
-// Author: Bahadır Ünal
-// ID: 10007768278
-// Section: 3
-// Assignment: 4
 // Description: This class Generic Queue Class taken from the textbook.Ensures us the facilities
 // that we need for processing tasks which is enqueue and dequeue.
 //-----------------------------------------------------
