@@ -7,10 +7,7 @@ import java.util.Scanner;
 public class TesterClass {
 //-----------------------------------------------------
 // Title: Class TesterClass
-// Author: Abdusselam koç,Bahadır ünal
-// ID: 4931214741,1000776827
-// Section: 2,3
-// Assignment: 5
+// Author: Abdusselam koç,Bahadır Ünal
 // Description: This class tests the all functionalities of the program with different inputs.
 //-----------------------------------------------------
 
