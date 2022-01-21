@@ -3,11 +3,8 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 //-----------------------------------------------------
-// Title: Class Util
+// Title: Util Class
 // Author: Abdusselam koç,Bahadır ünal
-// ID: 4931214741,1000776827
-// Section: 2,3
-// Assignment: 5
 // Description: This class creates the matrix and and finds word according to search and finds reverseAutocomplete.
 //-----------------------------------------------------
 
