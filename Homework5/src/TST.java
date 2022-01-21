@@ -2,9 +2,6 @@ import java.util.Scanner;
 //-----------------------------------------------------
 // Title: Class TST
 // Author: Abdusselam koç,Bahadır ünal
-// ID: 4931214741,1000776827
-// Section: 2,3
-// Assignment: 5
 // Description: The one of the Fundamental aspects for this task is “Trie Data Structure”.
 // This class used to store the” String stream” with only examined just enogh key characters (for most of the operations).
 // An 3-way Trie Class which have only 3 child for each node in tree.
