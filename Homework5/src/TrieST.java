@@ -2,7 +2,7 @@
 // Title: Class TrieST
 // Author: Abdusselam koç,Bahadır ünal
 // ID: 4931214741,1000776827
-// Section: 2,3
+// Section: 2,3 
 // Assignment: 5
 // Description: The one of the Fundamental aspects for this task is “Trie Data Structure”.
 // This class used to store the” String stream” in an efficient way which is Linear Time (for most of the operations).
